@@ -32,9 +32,7 @@ from FallenRobot.modules.sql.afk_sql import is_afk, check_afk_status
 from FallenRobot.modules.sql.users_sql import get_user_num_chats
 from FallenRobot.modules.helper_funcs.chat_status import sudo_plus
 from FallenRobot.modules.helper_funcs.extraction import extract_user
-from FallenRobot import telethn as FallenTelethonClient, TIGERS, DRAGONS, DEMONS
-
-
+from FallenRobot import telethn as FallenTelethonClient, TIGERS, DRAGONS, DEMresult
 def no_by_per(totalhp, percentage):
     """
     rtype: num of `percentage` from total
@@ -274,6 +272,7 @@ def info(update: Update, context: CallbackContext):
         userhp = hpmanager(user)
         text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
+    try:
         spamwtc = sw.get_ban(int(user.id))
         if spamwtc:
             text += "\n\n<b>This person is Spamwatched!</b>"
@@ -340,18 +339,37 @@ def info(update: Update, context: CallbackContext):
             message.reply_document(
                 document=open(f"{user.id}.png", "rb"),
                 caption=(text),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "★ʜᴇᴀʟᴛʜ★", url="https://t.me/DCbot_updates/13"),
+                            InlineKeyboardButton(
+                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/ibotsupdates/15")
+                        ],
+                    ]
+                ),
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
             )
 
             os.remove(f"{user.id}.png")
         # Incase user don't have profile pic, send normal text
         except IndexError:
             message.reply_text(
-                text, parse_mode=ParseMode.HTML, disable_web_page_preview=True
+                text, 
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "★ʜᴇᴀʟᴛʜ★", url="https://t.me/DCbot_updates/13"),
+                            InlineKeyboardButton(
+                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/ibotsupdates/15")
+                        ],
+                    ]
+                ),
+                parse_mode=ParseMode.HTML,
+                disable_web_page_preview=True,
             )
-
-               
 
     else:
         message.reply_text(
@@ -516,6 +534,7 @@ def __user_info__(user_id):
         result += f"<b>ᴏᴛʜᴇʀs sᴀʏ ᴛʜᴀᴛ:</b>\n{bio}\n"
     result = result.strip("\n")
     return result
+
 
 __help__ = """
 *ID:*
