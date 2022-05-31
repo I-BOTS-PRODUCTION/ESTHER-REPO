@@ -347,7 +347,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "★ʜᴇᴀʟᴛʜ★", url="https://t.me/DCbot_updates/13"),
                             InlineKeyboardButton(
-                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/DCbot_updates/4")
+                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/ibotsupdates/15")
                         ],
                     ]
                 ),
@@ -365,7 +365,7 @@ def info(update: Update, context: CallbackContext):
                             InlineKeyboardButton(
                                 "★ʜᴇᴀʟᴛʜ★", url="https://t.me/DCbot_updates/13"),
                             InlineKeyboardButton(
-                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/DCbot_updates/4")
+                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/ibotsupdates/15")
                         ],
                     ]
                 ),
