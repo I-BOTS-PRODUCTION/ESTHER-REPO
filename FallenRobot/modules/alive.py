@@ -11,8 +11,8 @@ from FallenRobot import telethn as tbot
 
 
 PHOTO = [
-    "https://telegra.ph/file/6a21ea6677342f43b363e.jpg",
-    "https://telegra.ph/file/40eb1ed850cdea274693e.jpg",
+    "https://te.legra.ph/file/e56ca14f024117b4f8e4f.jpg",
+    "https://te.legra.ph/file/e56ca14f024117b4f8e4f.jpg",
 ]
 
 @register(pattern=("/alive"))
