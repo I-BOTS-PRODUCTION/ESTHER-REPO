@@ -686,7 +686,11 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}",  caption="👋 ʜɪ, ɪ'ᴍ ᴀʟɪᴠᴇ.")
+            dispatcher.bot.sendMessage(
+                f"@{SUPPORT_CHAT}",  
+                "👋 ʜɪ, ɪ'ᴍ ᴀʟɪᴠᴇ."
+                 parse_mode=ParseMode.MARKDOWN
+            )
         except Unauthorized:
             LOGGER.warning(
                 "ʙᴏᴛ ɪꜱɴ'ᴛ ᴀʙʟᴇ ᴛᴏ ꜱᴇɴᴅ ᴍᴇꜱꜱᴀɢᴇ ᴛᴏ ꜱᴜᴘᴘᴏʀᴛ_ᴄʜᴀᴛ, ɢᴏ ᴀɴᴅ ᴄʜᴇᴄᴋ!"
