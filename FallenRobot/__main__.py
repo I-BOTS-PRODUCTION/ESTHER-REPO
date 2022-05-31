@@ -13,6 +13,7 @@ from FallenRobot import (
     OWNER_ID,
     PORT,
     SUPPORT_CHAT,
+    SUPPORT_CHAT,
     TOKEN,
     URL,
     WEBHOOK,
