@@ -18,7 +18,7 @@ from FallenRobot import (
     URL,
     WEBHOOK,
     SUPPORT_CHAT,
-    UPDATE_CHANNEL,
+    UPDATES_CHANNEL,
     dispatcher,
     StartTime,
     telethn,
@@ -97,7 +97,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(
-            text=" ᴜᴩᴅᴀᴛᴇꜱ ", url=f"https://t.me/{UPDATE_CHANNEL}"
+            text=" ᴜᴩᴅᴀᴛᴇꜱ ", url=f"https://t.me/{UPDATES_CHANNEL}"
         ),
         InlineKeyboardButton(
             text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_CHAT}"
