@@ -100,10 +100,10 @@ buttons = [
             text=" ᴜᴩᴅᴀᴛᴇꜱ ", url=f"https://t.me/{UPDATES_CHANNEL}"
         ),
         InlineKeyboardButton(
-            text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_CHAT}"
+            text="ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER_USERNAME}"
         ),
         InlineKeyboardButton(
-            text="ᴏᴡɴᴇʀ", url=f"https://t.me/{OWNER_USERNAME}"
+            text=" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/{SUPPORT_CHAT}"
         ),
     ],
 ]
