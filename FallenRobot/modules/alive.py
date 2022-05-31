@@ -12,8 +12,8 @@ from FallenRobot import telethn as tbot
 
 PHOTO = [
     "https://te.legra.ph/file/e56ca14f024117b4f8e4f.jpg",
-    "https://te.legra.ph/file/e56ca14f024117b4f8e4f.jpg",
 ]
+
 
 @register(pattern=("/alive"))
 async def awake(event):
