@@ -1,8 +1,4 @@
-<p align="center">
-    <a href="https://github.com/AnonymousR1025/FallenRobot/stargazers"><img src="https://img.shields.io/github/stars/AnonymousR1025/FallenRobot?label=Stars&style=flat-square&logo=github&color=F10070" alt="Stars" /></a>
-</p>
-<p align="center">
-━━━━━━━━━━━━━━━━━━━━━━
+
 <p align="center">
   <img src="https://te.legra.ph/file/9bc704c40e7049d3cc94f.jpg">
 </p>
