@@ -688,7 +688,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}",  
-                "👋 ʜɪ, ɪ'ᴍ ᴀʟɪᴠᴇ."
+                "👋 ʜɪ, ɪ'ᴍ ᴀʟɪᴠᴇ.",
                  parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
