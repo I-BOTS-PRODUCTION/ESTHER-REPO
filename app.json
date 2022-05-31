@@ -1,7 +1,7 @@
 {
-      "name": "Fallen Robot",
-      "description": "Telegram Group Management Bot.",
-      "logo": "https://telegra.ph/file/72e135da30a1a349f2844.jpg",
+      "name": "ᴇsᴛʜᴇʀ ʙᴏᴛ",
+      "description": "ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ.",
+      "logo": "https://te.legra.ph/file/9bc704c40e7049d3cc94f.jpg",
       "keywords": [
          "telegram",
          "sexy",
@@ -9,7 +9,7 @@
          "manager",
          "Fallen"
       ],   
-   "repository": "https://github.com/AnonymousBoy1025/FallenRobot",
+   "repository": "https://github.com/CyberDoomxD/ESTHER-NEWREPO",
    "addons": [
       {
          "options": {
