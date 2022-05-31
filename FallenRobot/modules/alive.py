@@ -23,7 +23,6 @@ async def awake(event):
   TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
   TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n\n"
   BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/MissEstherBot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/ibotssupport")]]
-  ran = random.choice(PHOTO)
   await tbot.send_file(event.chat_id, ran, caption=TEXT,  buttons=BUTTON)
 
 ## Alive mod
