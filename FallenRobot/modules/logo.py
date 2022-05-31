@@ -276,7 +276,7 @@ async def lego(event):
     draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
     fname = "fallen.png"
     img.save(fname, "png")
-    await telethn.send_file(event.chat_id, file=fname, caption = f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ Ξ S Γ H Ξ Я ʀᴏʙᴏᴛ")         
+    await telethn.send_file(event.chat_id, file=fname, caption = f"ʟᴏɢᴏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ Ξ S Γ H Ξ Я ")         
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)
@@ -287,7 +287,7 @@ async def lego(event):
 __mod_name__ = "Lᴏɢᴏ​"
 
 __help__ = """
-Ξ S Γ H Ξ Я Robot can create some beautiful and attractive logo for your profile pics.
+ᴇꜱᴛʜᴇʀ ʙᴏᴛ can create some beautiful and attractive logo for your profile pics.
 
 ❍ /logo (Text) *:* Create a logo of your given text with random view.
 """
