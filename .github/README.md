@@ -13,8 +13,8 @@
   <img src="https://github.com/AnonymousR1025/FallenRobot/blob/master/FallenRobot/resources/fallen.jpg">
 </p>
 
-## ㅤㅤㅤ 🖤ꜰᴀʟʟᴇɴ ʀᴏʙᴏᴛ🖤
-ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [💞ꜰᴀʟʟᴇɴ ʀᴏʙᴏᴛ​💞](https://t.me/FallenXRobot)
+## ㅤㅤㅤ 🖤ᴇsᴛʜᴇʀ ʙᴏᴛ🖤
+ɪ ᴀᴍ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [💞ᴇsᴛʜᴇʀ ʙᴏᴛ​💞](https://t.me/MissEstherBot)
 ᴛʜɪs ɪs ᴀ ᴅᴇᴍᴏ ʙᴏᴛ <br> ɪ ᴅᴏɴ'ᴛ ᴋɴᴏᴡ нσω ʟᴏɴɢᴇʀ ɪ'ʟʟ вε ʜᴏsᴛɪɴɢ ɪᴛ​...
 ━━━━━━━━━━━━━━━━━━━━━━
 ## ㅤㅤㅤᴅᴇᴘʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ​ 🚀
@@ -24,4 +24,4 @@
 
 ### ㅤㅤㅤㅤCREDITS 😘
 
-🖤 𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦 : ᴍᴇ ᴏɴ [ɢɪᴛʜᴜʙ💞](https://github.com/AnonymousBoy1025)ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ᴍᴇ ᴏɴ [ᴛᴇʟᴇɢʀᴀᴍ💔](https://telegram.me/anonymous_was_bot)
+🖤 𝗤𝗨𝗥𝗘𝗦𝗛𝗜 : ᴍᴇ ᴏɴ [ɢɪᴛʜᴜʙ💞](https://github.com/CyberDoomxD)ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ ᴍᴇ ᴏɴ [ᴛᴇʟᴇɢʀᴀᴍ💔](https://telegram.me/brother_of_villain)
