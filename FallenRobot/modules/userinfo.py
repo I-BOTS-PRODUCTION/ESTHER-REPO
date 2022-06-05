@@ -305,16 +305,12 @@ def info(update: Update, context: CallbackContext):
         text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Sᴏʟᴅɪᴇʀ</b>.\n"
         disaster_level_present = True
 
-    if disaster_level_present:
-        text += ' \n[<a href="https://t.me/ibotsupdates/15"> ᴅɪsᴀsᴛᴇʀ </a>]'.format(
-            bot.username
-        )
-
     try:
         user_member = chat.get_member(user.id)
         if user_member.status == "administrator":
             result = requests.post(
-                f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}"
+     True
+       f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}"
             )
             result = result.json()["result"]
             if "custom_title" in result.keys():
@@ -340,8 +336,17 @@ def info(update: Update, context: CallbackContext):
             message.reply_document(
                 document=open(f"{user.id}.png", "rb"),
                 caption=(text),
+                reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton(
+                                "★ʜᴇᴀʟᴛʜ★", url="https://t.me/DCbot_updates/13"),
+                            InlineKeyboardButton(
+                                "★ᴅɪꜱᴀꜱᴛᴇʀ★", url="https://t.me/ibotsupdates/15")
+                        ],
+                    ]
+                ),
                 parse_mode=ParseMode.HTML,
-                disable_web_page_preview=True,
             )
 
             os.remove(f"{user.id}.png")
