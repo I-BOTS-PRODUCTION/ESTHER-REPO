@@ -89,7 +89,7 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="✗ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ ✗", url="https://t.me/MissEstherBot?startgroup=true"),
+            text=" ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘꜱ ", url="https://t.me/MissEstherBot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
