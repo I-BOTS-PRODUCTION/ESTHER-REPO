@@ -504,7 +504,7 @@ def set_about_bio(update: Update, context: CallbackContext):
         message.reply_text("Reply to someone to set their bio!")
 
 
-def user_info(user_id):
+def __user_info__(user_id):
     bio = html.escape(sql.get_user_bio(user_id) or "")
     me = html.escape(sql.get_user_me_info(user_id) or "")
     result = ""
