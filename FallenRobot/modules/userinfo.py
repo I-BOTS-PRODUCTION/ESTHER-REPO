@@ -24,7 +24,7 @@ from FallenRobot import (
     dispatcher,
     sw,
 )
-from FallenRobot.main import STATS, TOKEN, USER_INFO
+from FallenRobot.__main__ import STATS, TOKEN, USER_INFO
 import FallenRobot.modules.sql.userinfo_sql as sql
 from FallenRobot.modules.disable import DisableAbleCommandHandler
 from FallenRobot.modules.sql.global_bans_sql import is_user_gbanned
