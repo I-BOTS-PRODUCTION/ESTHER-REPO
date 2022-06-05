@@ -31,7 +31,7 @@ from FallenRobot import (
     StartTime,
     SUPPORT_CHAT,
 )
-from FallenRobot.main import STATS, TOKEN, USER_INFO
+from FallenRobot.__main__ import STATS, TOKEN, USER_INFO
 from FallenRobot.modules.sql import SESSION
 import FallenRobot.modules.sql.userinfo_sql as sql
 from FallenRobot.modules.disable import DisableAbleCommandHandler
