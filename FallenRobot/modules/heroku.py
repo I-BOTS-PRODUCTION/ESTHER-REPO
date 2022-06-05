@@ -157,7 +157,7 @@ async def dyno_usage(dyno):
     await asyncio.sleep(1.5)
 
     return await die.edit(
-        "**ᴅʏɴᴏ ᴜsᴀɢᴇ**:\n\n"
+        "**ᴅʏɴᴏ ᴜsᴀɢᴇ ᴏғ Ξ S Γ H Ξ Я**:\n\n"
         f" -> ᴅʏɴᴏ ᴜsᴀɢᴇ ғᴏʀ  **{HEROKU_APP_NAME}**:\n"
         f"     •  {AppHours}**ʜ**  {AppMinutes}**ᴍ**  "
         f"**|**  [{AppPercentage}**%**]"
@@ -191,7 +191,7 @@ async def _(dyno):
         dyno.chat_id,
         "logs.txt",
         reply_to=dyno.id,
-        caption="Fallen Bot Logs.",
+        caption="Ξ S Γ H Ξ Я ʟᴏɢꜱ.",
     )
 
     await asyncio.sleep(5)
