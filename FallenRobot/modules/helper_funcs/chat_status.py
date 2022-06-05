@@ -382,7 +382,7 @@ def connection_status(func):
             context.bot,
             update,
             update.effective_chat,
-            update.effective_user.id,
+            update.effective_user.__id__,
             need_admin=False,
         )
 
