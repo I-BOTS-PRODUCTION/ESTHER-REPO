@@ -1,5 +1,3 @@
-
-
 # AI Chat (C) 2020-2021 by @InukaAsith
 
 import emoji
@@ -8,10 +6,10 @@ import aiohttp
 from googletrans import Translator as google_translator
 from pyrogram import filters
 from aiohttp import ClientSession
-from EmikoRobot import BOT_USERNAME as bu
-from EmikoRobot import BOT_ID, pbot, arq
-from EmikoRobot.ex_plugins.chatbot import add_chat, get_session, remove_chat
-from EmikoRobot.utils.pluginhelper import admins_only, edit_or_reply
+from FallenRobot import BOT_USERNAME as bu
+from FallenRobot import BOT_ID, pbot, arq
+from FallenRobot.ex_plugins.chatbot import add_chat, get_session, remove_chat
+from FallenRobot.utils.pluginhelper import admins_only, edit_or_reply
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
