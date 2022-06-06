@@ -190,19 +190,19 @@ def new_member(update: Update, context: CallbackContext):
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oh, Genos? Let's get this moving.", reply_to_message_id=reply
+                    f"ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ{html.escape(chat.title)} ᴍy ʟᴏʀᴅ..ʙʀɪɴɢ ᴛʜᴇ ᴀᴄᴛɪᴏɴ...", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
                     f"#USER_JOINED\n"
-                    f"Bot Owner just joined the group"
+                    f"ᴍy ɢᴏᴅ ɪꜱ ᴀʀʀɪᴠᴇᴅ!!!ᴀʟʟ ᴋɴᴇᴇʟ ɪɴꜰʀᴏɴᴛ ᴏꜰ ᴍy ɢᴏᴅ"
                 )
                 continue
 
             # Welcome Devs
             elif new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Be cool! A member of the Heroes Association just joined.",
+                    "ᴡʜᴏᴀ!!!ᴏɴᴇ ᴏꜰ ᴍy ᴇᴍᴩᴇʀᴏʀ ɪꜱ ᴊᴏɪɴᴇᴅ...ᴀʟʟ ʜᴀɪʟ ᴇᴍᴩᴇʀᴏʀ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -215,7 +215,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Sudos
             elif new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Whoa! A Dragon disaster just joined! Stay Alert!",
+                    "ʜᴜʜ!!ꜱᴛᴀy ᴀʟᴇʀᴛ!! ᴋɪɴɢ ɪꜱ ʜᴇʀᴇ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -228,7 +228,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Support
             elif new_mem.id in DEMONS:
                 update.effective_message.reply_text(
-                    "Huh! Someone with a Demon disaster level just joined!",
+                    "ʜᴜʜ!!!!ᴏᴜʀ ɢᴏᴠᴇʀɴᴏʀ ᴊᴜꜱᴛ ᴊᴏɪɴᴇᴅ",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -241,7 +241,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Whitelisted
             elif new_mem.id in TIGERS:
                 update.effective_message.reply_text(
-                    "Roar! A Tiger disaster just joined!", reply_to_message_id=reply
+                    "ʜᴇyᴀᴀ...ᴍy ᴄᴀᴩᴛᴀɪɴ ɪꜱ ᴀʀʀɪᴠᴇᴅ", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -253,7 +253,7 @@ def new_member(update: Update, context: CallbackContext):
             # Welcome Tigers
             elif new_mem.id in WOLVES:
                 update.effective_message.reply_text(
-                    "Awoo! A Wolf disaster just joined!", reply_to_message_id=reply
+                    "ᴜꜰꜰ!! ᴍy ꜱᴏʟᴅɪᴇʀ ᴊᴜꜱᴛ ᴊᴏɪɴᴇᴅ!", reply_to_message_id=reply
                 )
                 welcome_log = (
                     f"{html.escape(chat.title)}\n"
@@ -291,7 +291,7 @@ def new_member(update: Update, context: CallbackContext):
                         parse_mode=ParseMode.HTML,
                     )
                 update.effective_message.reply_text(
-                    "Watashi ga kita!", reply_to_message_id=reply
+                    "ɴᴇɴᴜ ᴄʜᴀᴀʟᴀ ᴅᴀɴɢᴇʀᴀꜱᴜ!", reply_to_message_id=reply
                 )
                 continue
 
@@ -546,14 +546,14 @@ def left_member(update: Update, context: CallbackContext):
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "Oi! Genos! He left..", reply_to_message_id=reply
+                    "ᴍy ʟᴏʀᴅ ʟᴇꜰᴛ ꜰʀᴏᴍ ᴛʜɪꜱ ᴄʜᴀᴛ..", reply_to_message_id=reply
                 )
                 return
 
             # Give the devs a special goodbye
             elif left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at the Hero's Association!",
+                    "ꜱᴇᴇ yᴏᴜ ʟᴀᴛᴇʀ ᴍy ᴇᴍᴩᴇʀᴏʀ!",
                     reply_to_message_id=reply,
                 )
                 return
