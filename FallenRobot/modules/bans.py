@@ -14,10 +14,10 @@ from telegram.utils.helpers import mention_html
 from typing import Optional, List
 from telegram import TelegramError
 
-import EmikoRobot.modules.sql.users_sql as sql
-from EmikoRobot.modules.disable import DisableAbleCommandHandler
-from EmikoRobot.modules.helper_funcs.filters import CustomFilters
-from EmikoRobot import (
+import FallenRobot.modules.sql.users_sql as sql
+from FallenRobot.modules.disable import DisableAbleCommandHandler
+from FallenRobot.modules.helper_funcs.filters import CustomFilters
+from FallenRobot import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
@@ -40,9 +40,9 @@ from EmikoRobot.modules.helper_funcs.chat_status import (
     can_delete,
     dev_plus,
 )
-from EmikoRobot.modules.helper_funcs.extraction import extract_user_and_text
-from EmikoRobot.modules.helper_funcs.string_handling import extract_time
-from EmikoRobot.modules.log_channel import gloggable, loggable
+from FallenRobot.modules.helper_funcs.extraction import extract_user_and_text
+from FallenRobot.modules.helper_funcs.string_handling import extract_time
+from FallenRobot.modules.log_channel import gloggable, loggable
 
 
 
