@@ -25,11 +25,15 @@ regex
 bleach
 git+https://github.com/starry69/python-markdown2.git
 wikipedia
+coffeehouse
 telethon
 telegraph
 heroku3
 nekos.py
 alphabet_detector
+spamwatch
+googletrans==4.0.0rc1
+google-trans-new
 pyrate-limiter
 cachetools
 ujson
