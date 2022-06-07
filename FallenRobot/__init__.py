@@ -94,7 +94,8 @@ if ENV:
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    
+    BOT_ID = int(os.environ.get("BOT_ID", None))
+
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
@@ -169,7 +170,8 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    
+    BOT_ID = Config.BOT_ID
+
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
