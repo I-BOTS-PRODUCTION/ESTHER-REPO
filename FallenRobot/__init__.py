@@ -192,6 +192,18 @@ else:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
 
+from FallenRobot.modules.sql import SESSION
+
+defaults = tg.Defaults(run_async=True)
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
+dispatcher = updater.dispatcher
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Fallen", API_ID, API_HASH)
