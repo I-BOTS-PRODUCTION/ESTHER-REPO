@@ -19,12 +19,7 @@ async def awake(event):
     TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n\n"
     TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
     TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n\n"
-    BUTTON = [
-        [
-            Button.url("ʜᴇʟᴘ​", "https://t.me/MissEstherBot?start=help"),
-            Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/ibotssupport"),
-        ]
-    ]
+    BUTTON = [[Button.url("ʜᴇʟᴘ​", "https://t.me/MissEstherBot?start=help"), Button.url("sᴜᴘᴘᴏʀᴛ​", "https://t.me/ibotssupport")]]
     await tbot.send_file(event.chat_id, PHOTO, caption=TEXT, buttons=BUTTON)
 
 
