@@ -4,8 +4,8 @@ lxml
 wget
 beautifulsoup4
 requests
-python-telegram-bot==13.11.0
-SQLAlchemy==1.4.31
+python-telegram-bot==12.8
+sqlalchemy==1.4.11
 PyDictionary
 psycopg2-binary
 feedparser
@@ -19,11 +19,8 @@ psutil
 aiohttp>=2.2.5
 Pillow
 CurrencyConverter
-googletrans==4.0.0rc1
-google-trans-new
 jikanpy
 speedtest-cli
-coffeehouse
 regex
 bleach
 git+https://github.com/starry69/python-markdown2.git
@@ -32,7 +29,6 @@ telethon
 telegraph
 heroku3
 nekos.py
-spamwatch
 alphabet_detector
 pyrate-limiter
 cachetools
@@ -61,3 +57,4 @@ aiofiles
 motor
 telegram
 gpytranslate
+yt_dlp
