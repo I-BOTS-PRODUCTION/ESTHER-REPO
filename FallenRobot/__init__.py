@@ -2,6 +2,7 @@ import logging
 import os
 import sys
 import time
+import spamwatch
 
 import telegram.ext as tg
 from aiohttp import ClientSession
@@ -60,8 +61,7 @@ if ENV:
     except ValueError:
         raise Exception("Your tiger users list does not contain valid integers.")
 
-    INFOPIC = bool(os.environ.get("INFOPIC", "True"))
-    START_IMG = os.environ.get("START_IMG", None)
+    INFOPIC = bool(os.environ.get("INFOPIC", False))
     EVENT_LOGS = os.environ.get("EVENT_LOGS", None)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     URL = os.environ.get("URL", "")  # Does not contain token
@@ -88,8 +88,13 @@ if ENV:
     ALLOW_EXCL = os.environ.get("ALLOW_EXCL", False)
     CASH_API_KEY = os.environ.get("CASH_API_KEY", None)
     TIME_API_KEY = os.environ.get("TIME_API_KEY", None)
+    AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
+    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
+    SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
+    SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
+    BOT_ID = int(os.environ.get("BOT_ID", None))
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -160,8 +165,12 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
+    UPDATES_CHANNEL = Config.UPDATES_CHANNEL
+    SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
+    SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
+    BOT_ID = Config.BOT_ID
 
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
@@ -173,6 +182,28 @@ DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1356469075)
 
+if not SPAMWATCH_API:
+    sw = None
+    LOGGER.warning("SpamWatch API key missing! recheck your config.")
+else:
+    try:
+        sw = spamwatch.Client(SPAMWATCH_API)
+    except:
+        sw = None
+        LOGGER.warning("Can't connect to SpamWatch!")
+
+from FallenRobot.modules.sql import SESSION
+
+defaults = tg.Defaults(run_async=True)
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
+telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
+dispatcher = updater.dispatcher
+print("[INFO]: INITIALIZING AIOHTTP SESSION")
+aiohttpsession = ClientSession()
+# ARQ Client
+print("[INFO]: INITIALIZING ARQ CLIENT")
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 telethn = TelegramClient("Fallen", API_ID, API_HASH)
@@ -180,6 +211,7 @@ telethn = TelegramClient("Fallen", API_ID, API_HASH)
 pbot = Client("FallenRobot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
+
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
