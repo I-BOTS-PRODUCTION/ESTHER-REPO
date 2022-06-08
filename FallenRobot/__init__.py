@@ -91,10 +91,8 @@ if ENV:
     AI_API_KEY = os.environ.get("AI_API_KEY", None)
     WALL_API = os.environ.get("WALL_API", None)
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
-    UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-    BOT_ID = int(os.environ.get("BOT_ID", None))
 
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
@@ -165,13 +163,11 @@ else:
     AI_API_KEY = Config.AI_API_KEY
     WALL_API = Config.WALL_API
     SUPPORT_CHAT = Config.SUPPORT_CHAT
-    UPDATES_CHANNEL = Config.UPDATES_CHANNEL
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    BOT_ID = Config.BOT_ID
-
+    
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
@@ -191,18 +187,6 @@ else:
     except:
         sw = None
         LOGGER.warning("Can't connect to SpamWatch!")
-
-from FallenRobot.modules.sql import SESSION
-
-defaults = tg.Defaults(run_async=True)
-updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
-dispatcher = updater.dispatcher
-print("[INFO]: INITIALIZING AIOHTTP SESSION")
-aiohttpsession = ClientSession()
-# ARQ Client
-print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
