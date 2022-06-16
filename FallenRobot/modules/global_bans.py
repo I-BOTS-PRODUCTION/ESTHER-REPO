@@ -162,7 +162,7 @@ def gban(update: Update, context: CallbackContext):
 
         return
 
-    message.reply_text("On it!")
+    message.reply_text("Tʜɪs Is Mʏ Eɴᴛᴇʀᴛᴀɪɴᴍᴇɴᴛ..I'ᴍ Oɴ Iᴛ..!")
 
     start_time = time.time()
     datetime_fmt = "%Y-%m-%dT%H:%M"
@@ -255,9 +255,9 @@ def gban(update: Update, context: CallbackContext):
 
     if gban_time > 60:
         gban_time = round((gban_time / 60), 2)
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Dᴏɴᴇ...Gʙᴀɴɴᴇᴅ...Hᴀsᴛᴀ Lᴀ Vɪsᴛᴀ Bᴀʙʏ☠️☠️Sᴇᴇ Yᴏᴜ Iɴ Hᴇʟʟ..", parse_mode=ParseMode.HTML)
     else:
-        message.reply_text("Done! Gbanned.", parse_mode=ParseMode.HTML)
+        message.reply_text("Dᴏɴᴇ...Gʙᴀɴɴᴇᴅ...Hᴀsᴛᴀ Lᴀ Vɪsᴛᴀ Bᴀʙʏ☠️☠️Sᴇᴇ Yᴏᴜ Iɴ Hᴇʟʟ..", parse_mode=ParseMode.HTML)
 
     try:
         bot.send_message(
@@ -265,7 +265,7 @@ def gban(update: Update, context: CallbackContext):
             "#EVENT"
             "You have been marked as Malicious and as such have been banned from any future groups we manage."
             f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
-            f"</b>Appeal Chat:</b> @{SUPPORT_CHAT}",
+            f"</b>Appeal Chat:</b> @ibotssupport",
             parse_mode=ParseMode.HTML,
         )
     except:
@@ -421,7 +421,7 @@ def check_and_ban(update, user_id, should_message=True):
             text = (
                 f"<b>Alert</b>: this user is globally banned.\n"
                 f"<code>*bans them from here*</code>.\n"
-                f"<b>Appeal chat</b>: @{SUPPORT_CHAT}\n"
+                f"<b>Appeal chat</b>: @ibotssupport\n"
                 f"<b>User ID</b>: <code>{user_id}</code>"
             )
             user = sql.get_gbanned_user(user_id)
@@ -504,7 +504,7 @@ def __user_info__(user_id):
         user = sql.get_gbanned_user(user_id)
         if user.reason:
             text += f"\n<b>Reason:</b> <code>{html.escape(user.reason)}</code>"
-        text += f"\n<b>Appeal Chat:</b> @{SUPPORT_CHAT}"
+        text += f"\n<b>Appeal Chat:</b> @ibotssupport"
     else:
         text = text.format("???")
     return text
