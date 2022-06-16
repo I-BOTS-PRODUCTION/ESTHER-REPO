@@ -135,12 +135,7 @@ SLAP_TEMPLATES = (
     "{user1} subscribed {user2}' to 5 years of bad internet.",
     "You know what’s worse than Dad jokes? {user2}!",
     "{user1} took all of {user2}'s cookies.",
-    "{user2} wa mou.......Shindeiru! - {user1}.",
     "{user2} lost his race piece!",  # No game no life reference
-    "Shut up {user2}, you are just {user2}.",  # No game no life reference
-    "{user1} hits {user2} with Aka si anse!",  # No game no life reference
-    "@NeoTheKitty scratches {user2}",  # Pixels pet cat - @NeoTheKitty
-    "Majin buu ate {user2}",  # Dbz
     "Goblin slayer slays {user2}",  # Goblin Slayer
 )
 
@@ -169,7 +164,6 @@ PAT_TEMPLATES = (
     "{user1} headpats {user2}'s head with a pat",
     "{user1} pats {user2} unexpectedly",
     "{user1} pats {user2} with consent, maybe?",
-    "Pat pat, {user2} honto kawaii ne!",
     "{user1} headpats {user2} at 420apm",
     "{user1} bellyrubs {user2}",
     "{user1} pats {user2} friendlily",
@@ -193,7 +187,7 @@ PAT_STICKERS = (
 )
 
 PING_STRING = (
-    "ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ! 🖤",
+    "ɪ ᴀᴍ sᴛɪʟʟ ᴀʟɪᴠᴇ! 🖤",
 )
 
 ITEMS = (
