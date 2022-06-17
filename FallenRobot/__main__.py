@@ -110,7 +110,7 @@ buttons = [
 
 FallenRobot_IMG = "https://telegra.ph/file/eb6b3e59af3d20ab741df.jpg"
 
-HELP_STRINGS = f"""ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅs."""
+HELP_STRINGS = f"""ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ʙᴇʟʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄꜱ ᴄᴏᴍᴍᴀɴᴅs."""
 
 DONATE_STRING = """[ɪ ʙᴏᴛꜱ ꜱᴜᴩᴩᴏʀᴛ](https://t.me/ibotssupport)"""
 
