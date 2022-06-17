@@ -9,7 +9,10 @@ from FallenRobot.events import register
 from FallenRobot import telethn as tbot
 
 
-PHOTO = "https://te.legra.ph/file/e56ca14f024117b4f8e4f.jpg"
+PHOTO = [
+         "https://telegra.ph/file/27926d6cb3fa0e564b2b3.jpg",
+         "https://telegra.ph/file/74807aeea259acbc97fa1.jpg",
+]
 
 @register(pattern=("/alive"))
 async def awake(event):
@@ -19,6 +22,11 @@ async def awake(event):
  TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
  TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n\n"
  BUTTON = [[Button.url("★ʜᴇʟᴘ★", "https://t.me/Missestherbot?start=help"), Button.url("★ꜱᴜᴘᴘᴏʀᴛ★", "https://t.me/ibotssupport")]]
- await tbot.send_file(event.chat_id, PHOTO, caption=TEXT,  buttons=BUTTON)
+
+ran = random.choice(PHOTO)
+    await tbot.send_file(event.chat_id, ran, caption=TEXT, buttons=BUTTON)
+
+
+## Alive mod
 
 ## Alive mod
