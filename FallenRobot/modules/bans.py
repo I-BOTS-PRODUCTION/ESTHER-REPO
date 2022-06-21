@@ -90,33 +90,14 @@ def ban(update: Update, context: CallbackContext) -> str:
             return ""
     else:
         silent = False
-    log = (
-        f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#{'S' if silent else ''}ʙᴀɴɴᴇᴅ\n"
-        f"<b>ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
-    )
-    if reason:
-        log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
-
-    try:
-        chat.kick_member(user_id)
-
-        if silent:
-            if message.reply_to_message:
-                message.reply_to_message.delete()
-            message.delete()
-            return log
-
-        # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        reply = (
+    log =  (
         f"<b>{html.escape(chat.title)}:</b>\n"
         f"#{'S' if silent else ''}BANNED\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
     if reason:
-        log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
+        log += "\n<b>Reason:</b> {}".format(reason)
 
     try:
         chat.ban_member(user_id)
@@ -132,7 +113,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] ɢᴇᴛ ᴏᴜᴛ ʜᴏᴜꜱᴇ..ഇറങ്ങിപ്പോടെയ്😡."
         )
         if reason:
-            reply += f"\nReason: {html.escape(reason)}"
+            reply += f"\n<b>Reason:</b> {html.escape(reason)}"
 
         bot.sendMessage(
             chat.id,
