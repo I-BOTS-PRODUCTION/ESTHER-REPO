@@ -1,6 +1,6 @@
 import html
 
-from telegram import ParseMode, Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
@@ -17,7 +17,6 @@ from FallenRobot import (
 )
 from FallenRobot.modules.disable import DisableAbleCommandHandler
 from FallenRobot.modules.helper_funcs.chat_status import (
-    user_admin_no_reply,
     bot_admin,
     can_restrict,
     connection_status,
@@ -27,7 +26,6 @@ from FallenRobot.modules.helper_funcs.chat_status import (
     user_admin,
     user_can_ban,
     can_delete,
-    dev_plus,
 )
 from FallenRobot.modules.helper_funcs.extraction import extract_user_and_text
 from FallenRobot.modules.helper_funcs.string_handling import extract_time
@@ -92,14 +90,14 @@ def ban(update: Update, context: CallbackContext) -> str:
             return ""
     else:
         silent = False
-    log =  (
+    log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        f"#{'S' if silent else ''}BANNED\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
+        f"#{'S' if silent else ''}ʙᴀɴɴᴇᴅ\n"
+        f"<b>ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
     )
     if reason:
-        log += "\n<b>Reason:</b> {}".format(reason)
+        log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
 
     try:
         chat.kick_member(user_id)
@@ -112,26 +110,13 @@ def ban(update: Update, context: CallbackContext) -> str:
 
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
         reply = (
-            f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] ɢᴇᴛ ᴏᴜᴛ ʜᴏᴜꜱᴇ..ഇറങ്ങിപ്പോടെയ്😡."
+            f"<code>❕</code><b>ʙᴀɴ ᴇᴠᴇɴᴛ</b>\n"
+            f"<code> </code><b>•  ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, user.first_name)}\n"
+            f"<code> </code><b>•  ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}"
         )
         if reason:
-            reply += f"\n<b>Reason:</b> {html.escape(reason)}"
-
-        bot.sendMessage(
-            chat.id,
-            reply,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="🔄  Unban", callback_data=f"unbanb_unban={user_id}"
-                        ),
-                        InlineKeyboardButton(text="🗑️  Delete", callback_data="unbanb_del"),
-                    ]
-                ]
-            ),
-            parse_mode=ParseMode.HTML,
-        )
+            reply += f"\n<code> </code><b>•  ʀᴇᴀsᴏɴ:</b> \n{html.escape(reason)}"
+        bot.sendMessage(chat.id, reply, parse_mode=ParseMode.HTML, quote=False)
         return log
 
     except BadRequest as excp:
@@ -204,43 +189,24 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
 
     log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
-        "#TEMP BANNED\n"
-        f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
-        f"<b>User:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
-        f"<b>Time:</b> {time_val}"
+        "ᴛᴇᴍᴩ ʙᴀɴ\n"
+        f"<b>ʙᴀɴɴᴇᴅ ʙʏ:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
+        f"<b>ᴜsᴇʀ:</b> {mention_html(member.user.id, html.escape(member.user.first_name))}\n"
+        f"<b>ᴛɪᴍᴇ:</b> {time_val}"
     )
     if reason:
-        log += "\n<b>Reason:</b> {}".format(reason)
+        log += "\n<b>ʀᴇᴀsᴏɴ:</b> {}".format(reason)
 
     try:
         chat.kick_member(user_id, until_date=bantime)
         # bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-
-        reply_msg = (
-            f"{mention_html(member.user.id, html.escape(member.user.first_name))} [<code>{member.user.id}</code>] Temporary Banned"
-            f" for (`{time_val}`)."
-        )
-
-        if reason:
-            reply_msg += f"\n<b>Reason:</b> {html.escape(reason)}"
-
         bot.sendMessage(
             chat.id,
-            reply_msg,
-            reply_markup=InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton(
-                            text="🔄  Unban", callback_data=f"unbanb_unban={user_id}"
-                        ),
-                        InlineKeyboardButton(text="🗑️  Delete", callback_data="unbanb_del"),
-                    ]
-                ]
-            ),
+            f"ʙᴀɴɴᴇᴅ! ᴜsᴇʀ {mention_html(member.user.id, html.escape(member.user.first_name))} "
+            f"ɪs ɴᴏᴡ ʙᴀɴɴᴇᴅ ғᴏʀ {time_val}.",
             parse_mode=ParseMode.HTML,
         )
         return log
-
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
@@ -261,60 +227,6 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
             message.reply_text("Well damn, I can't ban that user.")
 
     return log_message
-
-
-
-@connection_status
-@bot_admin
-@can_restrict
-@user_admin_no_reply
-@user_can_ban
-@loggable
-def unbanb_btn(update: Update, context: CallbackContext) -> str:
-    bot = context.bot
-    query = update.callback_query
-    chat = update.effective_chat
-    user = update.effective_user
-    if query.data != "unbanb_del":
-        splitter = query.data.split("=")
-        query_match = splitter[0]
-        if query_match == "unbanb_unban":
-            user_id = splitter[1]
-            if not is_user_admin(chat, int(user.id)):
-                bot.answer_callback_query(
-                    query.id,
-                    text="⚠️ You don't have enough rights to unmute people",
-                    show_alert=True,
-                )
-                return ""
-            log_message = ""
-            try:
-                member = chat.get_member(user_id)
-            except BadRequest:
-                pass
-            chat.unban_member(user_id)
-            query.message.edit_text(
-                f"{member.user.first_name} [{member.user.id}] Unbanned."
-            )
-            bot.answer_callback_query(query.id, text="Unbanned!")
-            return (
-                f"<b>{html.escape(chat.title)}:</b>\n"
-                f"#UNBANNED\n"
-                f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
-                f"<b>User:</b> {mention_html(member.user.id, member.user.first_name)}"
-            )
-
-    else:
-        if not is_user_admin(chat, int(user.id)):
-            bot.answer_callback_query(
-                query.id,
-                text="⚠️ You don't have enough rights to delete this message.",
-                show_alert=True,
-            )
-            return ""
-        query.message.delete()
-        bot.answer_callback_query(query.id, text="Deleted!")
-        return ""
 
 
 @run_async
