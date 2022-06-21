@@ -200,7 +200,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
     if not bantime:
         return log_message
 
-    log = ((
+    log = (
         f"<b>{html.escape(chat.title)}:</b>\n"
         "#TEMP BANNED\n"
         f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
