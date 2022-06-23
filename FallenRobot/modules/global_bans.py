@@ -39,7 +39,7 @@ from FallenRobot.modules.helper_funcs.extraction import (
 )
 from FallenRobot.modules.helper_funcs.misc import send_to_list
 
-GBAN_ENFORCE_GROUP = 6
+GBAN_ENFORCE_GROUP = -1
 
 GBAN_ERRORS = {
     "User is an administrator of the chat",
