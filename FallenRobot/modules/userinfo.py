@@ -7,7 +7,7 @@ from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 from telethon import events
 
-from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update, MessageEntity, version as ptbver, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import MAX_MESSAGE_LENGTH, ParseMode, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
@@ -22,7 +22,6 @@ from FallenRobot import (
     WOLVES,
     INFOPIC,
     dispatcher,
-    sw,
 )
 from FallenRobot.__main__ import STATS, TOKEN, USER_INFO
 import FallenRobot.modules.sql.userinfo_sql as sql
@@ -37,7 +36,7 @@ from FallenRobot import telethn as FallenTelethonClient, TIGERS, DRAGONS, DEMONS
 
 def no_by_per(totalhp, percentage):
     """
-    rtype: num of percentage from total
+    rtype: num of `percentage` from total
     eg: 1000, 10 -> 10% of 1000 (100)
     """
     return totalhp * percentage / 100
@@ -45,7 +44,7 @@ def no_by_per(totalhp, percentage):
 
 def get_percentage(totalhp, earnedhp):
     """
-    rtype: percentage of totalhp num
+    rtype: percentage of `totalhp` num
     eg: (1000, 100) will return 10%
     """
 
@@ -60,7 +59,7 @@ def hpmanager(user):
 
     if not is_user_gbanned(user.id):
 
-        # Assign new var new_hp since we need total_hp in
+        # Assign new var `new_hp` since we need `total_hp` in
         # end to calculate percentage.
         new_hp = total_hp
 
@@ -178,23 +177,23 @@ async def group_info(event) -> None:
             "Can't for some reason, maybe it is a private one or that I am banned there."
         )
         return
-    msg = f"ɪᴅ: {entity.id}"
-    msg += f"\nᴛɪᴛʟᴇ: {entity.title}"
-    msg += f"\nᴅᴄ: {entity.photo.dc_id}"
-    msg += f"\nᴠɪᴅᴇᴏ ᴩғᴩ: {entity.photo.has_video}"
-    msg += f"\nsᴜᴩᴇʀɢʀᴏᴜᴩ: {entity.megagroup}"
-    msg += f"\nʀᴇsᴛʀɪᴄᴛᴇᴅ: {entity.restricted}"
-    msg += f"\nsᴄᴀᴍ: {entity.scam}"
-    msg += f"\nsʟᴏᴡᴍᴏᴅᴇ: {entity.slowmode_enabled}"
+    msg = f"**ɪᴅ**: `{entity.id}`"
+    msg += f"\n**ᴛɪᴛʟᴇ**: `{entity.title}`"
+    msg += f"\n**ᴅᴄ**: `{entity.photo.dc_id}`"
+    msg += f"\n**ᴠɪᴅᴇᴏ ᴩғᴩ**: `{entity.photo.has_video}`"
+    msg += f"\n**sᴜᴩᴇʀɢʀᴏᴜᴩ**: `{entity.megagroup}`"
+    msg += f"\n**ʀᴇsᴛʀɪᴄᴛᴇᴅ**: `{entity.restricted}`"
+    msg += f"\n**sᴄᴀᴍ**: `{entity.scam}`"
+    msg += f"\n**sʟᴏᴡᴍᴏᴅᴇ**: `{entity.slowmode_enabled}`"
     if entity.username:
-        msg += f"\nᴜsᴇʀɴᴀᴍᴇ: {entity.username}"
-    msg += "\n\nᴍᴇᴍʙᴇʀ sᴛᴀᴛs:"
-    msg += f"\nᴀᴅᴍɪɴs: {len(totallist)}"
-    msg += f"\nᴜsᴇʀs: {totallist.total}"
-    msg += "\n\nᴀᴅᴍɪɴs ʟɪsᴛ:"
+        msg += f"\n**ᴜsᴇʀɴᴀᴍᴇ**: {entity.username}"
+    msg += "\n\n**ᴍᴇᴍʙᴇʀ sᴛᴀᴛs:**"
+    msg += f"\nᴀᴅᴍɪɴs: `{len(totallist)}`"
+    msg += f"\nᴜsᴇʀs: `{totallist.total}`"
+    msg += "\n\n**ᴀᴅᴍɪɴs ʟɪsᴛ:**"
     for x in totallist:
         msg += f"\n• [{x.id}](tg://user?id={x.id})"
-    msg += f"\n\nᴅᴇsᴄʀɪᴩᴛɪᴏɴ:\n{ch_full.full_chat.about}"
+    msg += f"\n\n**ᴅᴇsᴄʀɪᴩᴛɪᴏɴ**:\n`{ch_full.full_chat.about}`"
     await event.reply(msg)
 
 
@@ -241,7 +240,7 @@ def info(update: Update, context: CallbackContext):
     rep = message.reply_text("<code>ᴀᴩᴩʀᴀɪsɪɴɢ...</code>", parse_mode=ParseMode.HTML)
 
     text = (
-        f"------»<b> ᴀᴘᴘʀᴀɪꜱᴀʟ ʀᴇꜱᴜʟᴛꜱ:</b> «------\n"
+        f"ㅤ ㅤㅤ      ✦ ᴜsᴇʀ ɪɴғᴏ ✦\n•❅─────✧❅✦❅✧─────❅•\n"
         f"➻ <b>ᴜsᴇʀ ɪᴅ:</b> <code>{user.id}</code>\n"
         f"➻ <b>ғɪʀsᴛ ɴᴀᴍᴇ:</b> {html.escape(user.first_name)}"
     )
@@ -273,40 +272,29 @@ def info(update: Update, context: CallbackContext):
         userhp = hpmanager(user)
         text += f"\n\n<b>ʜᴇᴀʟᴛʜ:</b> <code>{userhp['earnedhp']}/{userhp['totalhp']}</code>\n[<i>{make_bar(int(userhp['percentage']))} </i>{userhp['percentage']}%]"
 
-    try:
-        spamwtc = sw.get_ban(int(user.id))
-        if spamwtc:
-            text += "\n\n<b>This person is Spamwatched!</b>"
-            text += f"\nReason: <pre>{spamwtc.reason}</pre>"
-            text += "\nAppeal at @SpamWatchSupport"
-        else:
-            pass
-    except:
-        pass  # don't crash if api is down somehow...
-
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Gᴏᴅ</b>.\n"
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ɢᴏᴅ</b>.\n"
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += "\n\nᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴍᴇᴍʙᴇʀ ᴏғ <b>Eᴍᴘᴇʀᴏʀ</b>.\n"
+        text += "\n\nᴛʜɪs ᴜsᴇʀ ɪs ᴀ ᴍᴇᴍʙᴇʀ ᴏғ <b>ᴀɴᴏɴ ᴀssᴏᴄɪᴀᴛɪᴏɴ</b>.\n"
         disaster_level_present = True
     elif user.id in DRAGONS:
-        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Kɪɴɢ</b>.\n"
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴅʀᴀɢᴏɴ</b>.\n"
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Gᴏᴠᴇʀɴᴏʀ</b>.\n"
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴅᴇᴍᴏɴ</b>.\n"
         disaster_level_present = True
     elif user.id in TIGERS:
-        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Cᴀᴘᴛᴀɪɴ</b>.\n"
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴛɪɢᴇʀ</b>.\n"
         disaster_level_present = True
     elif user.id in WOLVES:
-        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>Sᴏʟᴅɪᴇʀ</b>.\n"
+        text += "\n\nᴛʜᴇ ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟ ᴏғ ᴛʜɪs ᴜsᴇʀ ɪs <b>ᴡᴏʟғ</b>.\n"
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' \n[<a href="https://t.me/ibotsupdates/15"> ᴅɪsᴀsᴛᴇʀ </a>]'.format(
+        text += ' \n[<a href="https://t.me/DevilsHeavenMF/96962">ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴋɴᴏᴡ ᴡʜᴀᴛ ɪs ᴅɪsᴀsᴛᴇʀ ʟᴇᴠᴇʟs.</a>]'.format(
             bot.username
         )
 
@@ -314,7 +302,7 @@ def info(update: Update, context: CallbackContext):
         user_member = chat.get_member(user.id)
         if user_member.status == "administrator":
             result = requests.post(
-       f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}"
+                f"https://api.telegram.org/bot{TOKEN}/getChatMember?chat_id={chat.id}&user_id={user.id}"
             )
             result = result.json()["result"]
             if "custom_title" in result.keys():
@@ -422,7 +410,7 @@ def set_about_me(update: Update, context: CallbackContext):
 @run_async
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "<b>⫷ ᴇꜱᴛʜᴇʀ ᴄᴜʀʀᴇɴᴛ ꜱᴛᴀᴛɪꜱᴛɪᴄꜱ ⫸</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "<b>🧐 ᴄᴜʀʀᴇɴᴛ sᴛᴀᴛs:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
 
@@ -520,21 +508,18 @@ __help__ = """
 *ID:*
  ❍ /id*:* get the current group id. If used by replying to a message, gets that user's id.
  ❍ /gifid*:* reply to a gif to me to tell you its file ID.
-
 *Self added information:* 
  ❍ /setme <text>*:* will set your info
  ❍ /me*:* will get your or another user's info.
 *Examples:* 💡
  ➩ /setme I am a wolf.
  ➩ /me @username(defaults to yours if no user specified)
-
 *Information others add on you:* 
  ❍ /bio*:* will get your or another user's bio. This cannot be set by yourself.
  ❍ /setbio <text>*:* while replying, will save another user's bio 
 *Examples:* 💡
  ➩ /bio @username(defaults to yours if not specified).`
  ➩ /setbio This user is a wolf` (reply to the user)
-
 *Overall Information about you:*
  ❍ /info*:* get information about a user. 
  ❍ /myinfo*:* Shows info about the user who sent this command.
