@@ -158,7 +158,7 @@ async def dyno_usage(dyno):
 
     return await die.edit(
         "**ᴅʏɴᴏ ᴜsᴀɢᴇ ᴏғ Ξ S Γ H Ξ Я**:\n\n"
-        f" -> ᴅʏɴᴏ ᴜsᴀɢᴇ ғᴏʀ  **{HEROKU_APP_NAME}**:\n"
+        f" -> ᴅʏɴᴏ ᴜsᴀɢᴇ ғᴏʀ  **Ξ S Γ H Ξ Я**:\n"
         f"     •  {AppHours}**ʜ**  {AppMinutes}**ᴍ**  "
         f"**|**  [{AppPercentage}**%**]"
         "\n\n"
