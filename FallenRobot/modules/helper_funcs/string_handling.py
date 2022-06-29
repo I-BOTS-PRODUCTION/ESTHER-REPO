@@ -31,7 +31,6 @@ BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\(buttonurl:(?:/{0,2})(.+?)(:same)?\)
 def _selective_escape(to_parse: str) -> str:
     """
     Escape all invalid markdown
-
     :param to_parse: text to escape
     :return: valid markdown string
     """
@@ -62,10 +61,8 @@ def markdown_parser(
 ) -> str:
     """
     Parse a string, escaping all invalid markdown entities.
-
     Escapes URL's so as to avoid URL mangling.
     Re-adds any telegram code entities obtained from the entities object.
-
     :param txt: text to parse
     :param entities: dict of message entities in text
     :param offset: message offset - command and notename length
@@ -287,5 +284,6 @@ def markdown_to_html(text):
     return bleach.clean(
         _html, tags=["strong", "em", "a", "code", "pre", "strike", "u"], strip=True
     )[:-1]
+
 
 #
