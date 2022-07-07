@@ -55,7 +55,7 @@ async def rm_deletedacc(show):
     del_u = 0
     del_status = "**Group clean, 0 deleted accounts found.**"
     if con != "clean":
-        kontol = await show.reply("`Searching for deleted account to fu*k...`")
+        kontol = await show.reply("`Searching for deleted accounts..`")
         async for user in show.client.iter_participants(show.chat_id):
             if user.deleted:
                 del_u += 1
@@ -71,7 +71,7 @@ async def rm_deletedacc(show):
     creator = chat.creator
     if not admin and not creator:
         return await show.reply("**Sorry you're not admin!**")
-    memek = await show.reply("`Fu*king deleted accounts...`")
+    memek = await show.reply("`removing deleted accounts...`")
     del_u = 0
     del_a = 0
     async for user in telethn.iter_participants(show.chat_id):
