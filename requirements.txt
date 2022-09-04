@@ -37,6 +37,7 @@ pymongo
 python-arq
 pyrate-limiter
 pykeyboard
+spamwatch
 pynewtonmath
 pyrogram==2.0.44
 python-telegram-bot==12.8
